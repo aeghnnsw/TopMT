@@ -1,0 +1,2 @@
+saved_models/type_assign/checkpoints/epoch=2280-step=510900.ckpt filter=lfs diff=lfs merge=lfs -text
+saved_models/top_sample/checkpoints/epoch=4-step=366300.ckpt filter=lfs diff=lfs merge=lfs -text
