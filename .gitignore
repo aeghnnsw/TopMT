@@ -32,3 +32,6 @@ __pycache__/
 
 # poetry lock file
 poetry.lock
+
+# sample file
+sample*

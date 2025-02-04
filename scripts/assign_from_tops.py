@@ -7,7 +7,7 @@ from time import time
 
 import numpy as np
 from pbdd.models.ma_models import mol_assign_GAN
-from pbdd.post_processing.sample import assign_mols, assign_mols_match
+from pbdd.post_processing.sample import assign_mols
 from pbdd.post_processing.scoring import vina_score_with_convert
 from pbdd.post_processing.utils import convert_rdkit_pdbqt_str
 from rdkit import Chem
