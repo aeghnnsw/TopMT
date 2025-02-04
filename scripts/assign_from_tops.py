@@ -6,13 +6,15 @@ import pickle
 from time import time
 
 import numpy as np
+import torch
+from rdkit import Chem
+from rdkit.Chem import Descriptors
+from tqdm import tqdm
+
 from pbdd.models.ma_models import mol_assign_GAN
 from pbdd.post_processing.sample import assign_mols
 from pbdd.post_processing.scoring import vina_score_with_convert
 from pbdd.post_processing.utils import convert_rdkit_pdbqt_str
-from rdkit import Chem
-from rdkit.Chem import Descriptors
-from tqdm import tqdm
 
 
 def convert_sdf_to_pdbqt(assign_sdf_path,assign_pdbqt_path):
