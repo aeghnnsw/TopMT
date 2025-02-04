@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+
+# Other temporary files
+tmp/
+*.tmp
+
+# py cache
+__pycache__/
+*.pyc
+
+# pkl files
+*.pkl
+
+# poetry lock file
+poetry.lock

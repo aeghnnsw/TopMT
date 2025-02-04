@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "TopMT"
+version = "0.1.0"
+description = "TopMT"
+authors = ["Shen <wang.12218@osu.edu>"]
+packages = [
+    { include = "pbdd", from = "src" }
+]
+# ...existing code...
+
+[tool.poetry.dependencies]
+python = ">=3.7.1,<3.8"
+dimorphite_dl = "1.3.2"
+faerun = "0.4.7"
+matplotlib = "3.5.3"
+meeko = "0.5.0"
+mpl_scatter_density = "0.7"
+networkx = "2.2"
+numpy = "1.21.5"
+pandas = "1.3.5"
+python-constraint = "1.4.0"
+pytorch_lightning = "1.9.5"
+rdkit = "2023.3.2"
+rdkit_pypi = "2022.9.5"
+scipy = "1.7.3"
+torch = {url = "https://download.pytorch.org/whl/cu116/torch-1.13.0%2Bcu116-cp37-cp37m-linux_x86_64.whl#sha256=191c4c4241a0b6874d214531907a5a419a18cf7ea8813d33252a8995c4f06c7e"}
+torch-geometric = "2.3.1"
+tqdm = "4.64.1"
+vina = "1.2.5"
+pyg-lib = "*"
+torch-scatter = "*"
+torch-sparse = "*"
+torch-cluster = "*"
+torch-spline-conv = "*"
+# ...existing code...
+
+[[tool.poetry.source]]
+name = "pyg"
+url = "https://data.pyg.org/whl/torch-1.13.0+cu116.html"
+
+[tool.poetry.dev-dependencies]
+# ...existing code...
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+# ...existing code...
