@@ -6,13 +6,15 @@ import pickle
 from time import time
 
 import numpy as np
-from pbdd.models.ma_models import mol_assign_GAN
-from pbdd.post_processing.sample import assign_mols, assign_mols_match
-from pbdd.post_processing.scoring import vina_score_with_convert
-from pbdd.post_processing.utils import convert_rdkit_pdbqt_str
+import torch
 from rdkit import Chem
 from rdkit.Chem import Descriptors
 from tqdm import tqdm
+
+from pbdd.models.ma_models import mol_assign_GAN
+from pbdd.post_processing.sample import assign_mols
+from pbdd.post_processing.scoring import vina_score_with_convert
+from pbdd.post_processing.utils import convert_rdkit_pdbqt_str
 
 
 def convert_sdf_to_pdbqt(assign_sdf_path,assign_pdbqt_path):
@@ -165,7 +167,8 @@ def main():
 
         mol_assign_trained_model = mol_assign_GAN.load_GAN_from_checkpoint(mol_assign_ckpt_path)
         assigned_mols = assign_mols(top_list,mol_assign_trained_model,\
-                                        n_samples=n_assigns,qed_threshold=args.qed_threshold)
+                                    n_samples=n_assigns,qed_threshold=args.qed_threshold,\
+                                    num_process=args.n_process)
 
         if len(assigned_mols) == 0:
             print('no mols assigned, please check the assign method and parameters')

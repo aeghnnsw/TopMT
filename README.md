@@ -45,9 +45,10 @@ Make sure you have the following prerequisites installed:
 ```
    cd TopMT
 ```
-3. Install required packages
+3. Install through poetry
 ```
-   pip install -r requirements.txt
+   pip install poetry
+   poetry install
 ```
 ## Usage
 The examples in the `examples` folder demonstrate how to use the project. For this demo, we'll use the folder `examples/7d3i`.

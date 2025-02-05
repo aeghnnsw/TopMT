@@ -125,7 +125,7 @@ def assign_mols(mol_graphs,mol_assign_model,n_samples=100,batch_size=64,num_proc
         n_nodes = graph.x.shape[0]
         task_list.append((mol_assign_model,edge_index,n_nodes,n_samples,batch_size,pos,\
                           qed_threshold))
-    with multiprocessing.get_context('fork').Pool(num_process) as pool:
+    with multiprocessing.get_context('spawn').Pool(num_process) as pool:
         results_pool = pool.starmap(assign_type,task_list)
     mols = []
     for mols_temp in results_pool:
